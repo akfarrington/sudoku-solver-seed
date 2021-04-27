@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Sudoku Solver</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style type="text/css">
+    
+      html, body {
+        background-color: #FAFAFA
+      }
+
+      table {
+        border: 2px solid #000000;
+      }
+
+      td {
+        border: 1px solid #000000;
+        text-align: center;
+        vertical-align: middle;  
+      }
+
+      input {
+        color: #000000;
+        padding: 0;
+        border: 0;
+        text-align: center;
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        background-color: #FFFFFF;
+        outline: none;
+      }
+
+      input:disabled {
+        background-color: #EEEEEE;
+      }
+
+      .notes {
+        color: #000000;
+        padding: 0;
+        border: 0;
+        width: 48px;
+        height: 48px;
+        font-size: 12px;
+        background-color: #FFFFFF;
+        outline: none;
+      }
+
+      #cell_0,  #cell_1,  #cell_2  { border-top:    2px solid #000000; }
+      #cell_2,  #cell_11, #cell_20 { border-right:  2px solid #000000; }
+      #cell_18, #cell_19, #cell_20 { border-bottom: 2px solid #000000; }
+      #cell_0,  #cell_9,  #cell_18 { border-left:   2px solid #000000; }
+
+      #cell_3,  #cell_4,  #cell_5  { border-top:    2px solid #000000; }
+      #cell_5,  #cell_14, #cell_23 { border-right:  2px solid #000000; }
+      #cell_21, #cell_22, #cell_23 { border-bottom: 2px solid #000000; }
+      #cell_3,  #cell_12, #cell_21 { border-left:   2px solid #000000; }
+
+      #cell_6,  #cell_7,  #cell_8  { border-top:    2px solid #000000; }
+      #cell_8,  #cell_17, #cell_26 { border-right:  2px solid #000000; }
+      #cell_24, #cell_25, #cell_26 { border-bottom: 2px solid #000000; }
+      #cell_6,  #cell_15, #cell_24 { border-left:   2px solid #000000; }
+
+      #cell_27, #cell_28, #cell_29 { border-top:    2px solid #000000; }
+      #cell_29, #cell_38, #cell_47 { border-right:  2px solid #000000; }
+      #cell_45, #cell_46, #cell_47 { border-bottom: 2px solid #000000; }
+      #cell_27, #cell_36, #cell_45 { border-left:   2px solid #000000; }
+
+      #cell_30, #cell_31, #cell_32 { border-top:    2px solid #000000; }
+      #cell_32, #cell_41, #cell_50 { border-right:  2px solid #000000; }
+      #cell_48, #cell_49, #cell_50 { border-bottom: 2px solid #000000; }
+      #cell_30, #cell_39, #cell_48 { border-left:   2px solid #000000; }
+
+      #cell_33, #cell_34, #cell_35 { border-top:    2px solid #000000; }
+      #cell_35, #cell_44, #cell_53 { border-right:  2px solid #000000; }
+      #cell_51, #cell_52, #cell_53 { border-bottom: 2px solid #000000; }
+      #cell_33, #cell_42, #cell_51 { border-left:   2px solid #000000; }
+
+      #cell_54, #cell_55, #cell_56 { border-top:    2px solid #000000; }
+      #cell_56, #cell_65, #cell_74 { border-right:  2px solid #000000; }
+      #cell_72, #cell_73, #cell_74 { border-bottom: 2px solid #000000; }
+      #cell_54, #cell_63, #cell_72 { border-left:   2px solid #000000; }
+
+      #cell_57, #cell_58, #cell_59 { border-top:    2px solid #000000; }
+      #cell_59, #cell_68, #cell_77 { border-right:  2px solid #000000; }
+      #cell_75, #cell_76, #cell_77 { border-bottom: 2px solid #000000; }
+      #cell_57, #cell_66, #cell_75 { border-left:   2px solid #000000; }
+
+      #cell_60, #cell_61, #cell_62 { border-top:    2px solid #000000; }
+      #cell_62, #cell_71, #cell_80 { border-right:  2px solid #000000; }
+      #cell_78, #cell_79, #cell_80 { border-bottom: 2px solid #000000; }
+      #cell_60, #cell_69, #cell_78 { border-left:   2px solid #000000; }
+
+    </style>
+  </head>
+  <body>
+
+    <div class=\"container\">
+      
+      <h1>Sudoku Solver</h1>
+      <br />
+      <section id="app"></section>
+      <script type="module">
+          import init from '/pkg/package.js';
+          init('/pkg/package_bg.wasm');
+      </script>
+      <br />
+    </div>
+    <div>
+      Borrowed this html Sudoku board from <a href="https://gist.github.com/thebinarypenguin/4d45ffe87096e508800b5d11544bf2fa">
+      thebinarypenguin's github</a> with some modifications. The html and css are all originally his/her work.
+      WASM built with Rust + Seed.
+    </div>
+
+  </body>
+</html>
